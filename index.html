@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpendLog — Expense Tracker</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <div class="logo">spend<span>log</span></div>
+    <div class="tagline">personal expense tracker</div>
+  </div>
+
+  <div class="summary-grid" id="metrics"></div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('add',this)"><i class="ti ti-plus" aria-hidden="true"></i> Add</button>
+    <button class="tab" onclick="showTab('list',this)"><i class="ti ti-list" aria-hidden="true"></i> Expenses</button>
+    <button class="tab" onclick="showTab('summary',this)"><i class="ti ti-chart-bar" aria-hidden="true"></i> Summary</button>
+  </div>
+
+  <!-- Add Expense Panel -->
+  <div id="tab-add" class="panel">
+    <div class="form-grid">
+      <div class="field full">
+        <label>Amount (₹)</label>
+        <input type="number" id="f-amount" placeholder="0.00" min="0" step="0.01">
+      </div>
+      <div class="field">
+        <label>Category</label>
+        <select id="f-cat">
+          <option>Food</option>
+          <option>Transport</option>
+          <option>Bills</option>
+          <option>Shopping</option>
+          <option>Health</option>
+          <option>Entertainment</option>
+          <option>Education</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Date</label>
+        <input type="date" id="f-date">
+      </div>
+      <div class="field full">
+        <label>Description (optional)</label>
+        <input type="text" id="f-desc" placeholder="What was this for?">
+      </div>
+      <div class="full">
+        <button class="add-btn" onclick="addExpense()">
+          <i class="ti ti-plus"></i> Add Expense
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Expenses List Panel -->
+  <div id="tab-list" class="panel" style="display:none">
+    <div class="filter-row" id="filter-row"></div>
+    <div class="list-header">
+      <div>Description</div>
+      <div>Category</div>
+      <div style="text-align:right">Amount</div>
+      <div></div>
+    </div>
+    <div id="expense-list"></div>
+  </div>
+
+  <!-- Summary Panel -->
+  <div id="tab-summary" class="panel" style="display:none">
+    <div class="summary-section" id="summary-content"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
