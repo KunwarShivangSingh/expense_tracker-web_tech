@@ -1,45 +1,33 @@
-# SpendLog – Expense Tracker
+# SpendLog 💸
 
-SpendLog is a modern and responsive Expense Tracker web application built using HTML, CSS, and JavaScript. It allows users to record, manage, and analyze their daily expenses with an intuitive user interface and real-time expense summaries.
+> A clean, minimal personal expense tracker that lives entirely in your browser.
+
+---
 
 ## Features
 
-- Add expenses with amount, category, date, and description
-- View all recorded expenses
-- Delete expenses instantly
-- Filter expenses by category
-- Track total spending
-- View monthly spending statistics
-- Calculate average expense per entry
-- Category-wise expense summary
-- Responsive design for desktop and mobile devices
-- Dark mode support
-- Data persistence using Local Storage
+- **Add expenses** with amount, category, date, and optional description
+- **Filter by category** using quick-tap filter chips
+- **Summary view** with per-category breakdown and visual bar charts
+- **4 metric cards** — total spent, this month, category count, and average per entry
+- **Persistent storage** via `localStorage` — data survives page refreshes
+- **Dark mode** support out of the box (respects `prefers-color-scheme`)
+- **Responsive** — works on mobile and desktop
+- **Zero dependencies** — plain HTML, CSS, and JavaScript
+
+---
 
 ## Categories
 
-- Food
-- Transport
-- Bills
-- Shopping
-- Health
-- Entertainment
-- Education
-- Other
+| Category      | Color  |
+|---------------|--------|
+| Food          | Green  |
+| Transport     | Blue   |
+| Bills         | Red    |
+| Shopping      | Pink   |
+| Health        | Lime   |
+| Entertainment | Amber  |
+| Education     | Purple |
+| Other         | Gray   |
 
-## Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript (ES6)
-- Local Storage API
-
-## Project Structure
-
-```text
-SpendLog/
-│
-├── index.html      # Main user interface
-├── style.css       # Styling and responsive design
-├── app.js          # Application logic
-└── README.md
+---
